@@ -1,0 +1,21 @@
+{
+  "name": "twitch-desktop-vlc",
+  "main": "index.js",
+  "description": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/client/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "jquery": "^3.1.0",
+    "Font-Awesome-SVG-PNG": "font-awesome-svg-png#^1.1.5"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "twitch-desktop-vlc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "twitch-get-stream": "^0.3.2"
+  },
+  "devDependencies": {
+      "electron": "^1.3.3"
+  },
+  "scripts": {
+    "test": "electron main.js"
+  },
+  "author": "idietmoran <idietmoran@gmail.com>",
+  "license": "MIT"
+}
