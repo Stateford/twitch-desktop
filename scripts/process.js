@@ -38,5 +38,3 @@ class Process {
         });
     }
 }
-
-Process.startStream('monstercat');

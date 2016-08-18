@@ -1,0 +1,33 @@
+app.controller('twitchCtrl', function($scope, $http, $route) {
+    let serverTest = "http://localhost:30002/api/streams";
+    let localTest = "../../../data/streams.json";
+    
+        $.getJSON(serverTest, function(data) {
+            var usernames = [];
+            for(var i in data.streams) {
+                usernames.push(data.streams[i]);
+            };
+            
+            $scope.streams = [];
+            
+            $scope.reloadRoute = function() {
+                $route.reload();
+                $.getScript('./js/audioCtrl.js');
+            }
+            
+            for(var i in usernames) {
+                let current = usernames[i];
+                
+                $http.get(`https://api.twitch.tv/kraken/streams/${current}`)
+                    .success(function(data) {
+                        if(data.streams !== null) {
+                            $scope.streams.push(data);
+                        }
+                    })
+                    .error(function(data) {
+                        console.log('got nothing');
+                })
+            }
+            
+        })
+})

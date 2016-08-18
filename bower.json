@@ -16,6 +16,7 @@
   "dependencies": {
     "angular": "^1.5.8",
     "jquery": "^3.1.0",
-    "Font-Awesome-SVG-PNG": "font-awesome-svg-png#^1.1.5"
+    "font-awesome": "^4.6.3",
+    "angular-route": "^1.5.8"
   }
 }
