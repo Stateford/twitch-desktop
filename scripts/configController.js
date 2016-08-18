@@ -119,8 +119,20 @@ class Config {
         // set our defaults
         let defaults = { options: { quality: "source", chat: false }, vlcPath: null };
         // write to config
+        fs.stat(`${process.cwd()}/data/`, function(err) {
+            if(err) {
+                fs.mkdir(`${process.cwd()}/data/`, function(err) {
+                    if(err) console.error(err);
+                });
+            } else {
+                fs.writeFile(`${process.cwd()}/data/config.json`, JSON.stringify(defaults, null, 4), function(err) {
+                    if(err) console.error(err);
+                });
+            }
+        });
+
         fs.writeFile(`${process.cwd()}/data/config.json`, JSON.stringify(defaults, null, 4), function(err) {
-            if(err) throw err;
+            if(err) console.error(err);
         });
     }
 }
