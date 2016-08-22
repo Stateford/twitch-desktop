@@ -1,10 +1,10 @@
 app.controller('twitchCtrl', function($scope, $http, $route) {
-    let serverTest = "http://localhost:30002/api/streams";
-    let localTest = "../../../data/streams.json";
+//    let serverTest = "http://localhost:30002/api/streams";
+//    let localTest = "../../../data/streams.json";
     
         $.getJSON(serverTest, function(data) {
             var usernames = [];
-            for(var i in data.streams) {
+            for(let i in data.streams) {
                 usernames.push(data.streams[i]);
             };
             
@@ -12,7 +12,6 @@ app.controller('twitchCtrl', function($scope, $http, $route) {
             
             $scope.reloadRoute = function() {
                 $route.reload();
-                $.getScript('./js/audioCtrl.js');
             }
             
             for(var i in usernames) {

@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "dotenv": "^2.0.0",
+    "request": "^2.74.0",
     "twitch-get-stream": "^0.3.2"
   },
   "devDependencies": {
