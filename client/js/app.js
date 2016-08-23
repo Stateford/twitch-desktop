@@ -4,15 +4,18 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
                $compileProvider.debugInfoEnabled(false);
                $locationProvider.html5Mode({enabled: true, requireBase: false}).hashPrefix('*');
                $routeProvider
-                .when('/index', {
+                .when('/', {
                    controller: 'twitchCtrl',
-                   templateUrl: 'public/views/default.html'
+                   templateUrl: 'client/views/default.html'
                })
-               .when('/:channel', {
+               .when('channel/:channel', {
                    controller: 'streamCtrl',
-                   templateUrl: 'public/views/channel.html'
+                   templateUrl: 'client/views/channel.html'
+               })
+               .when('/options', {
+                   templateUrl: 'client/views/options.html'
                })
                .otherwise({
-                   redirectTo: "/index"
+                   redirectTo: "/"
                });
            }]);

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="twitch">
     <head>
         <meta charset="utf-8">
         <title>menu</title>
         <link type="text/css" rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-<!--        <link type="text/css" rel="stylesheet" href="css/menu.css">-->
-        <link type="text/css" rel="stylesheet" href="css/main.css">
+        <link type="text/css" rel="stylesheet" href="css/menu.css">
+        <!-- <link type="text/css" rel="stylesheet" href="css/main.css"> -->
+        <script src="lib/jquery/dist/jquery.min.js"></script>
         <script src="lib/angular/angular.min.js"></script>
         <script src="lib/angular-route/angular-route.min.js"></script>
-        <script src="lib/jquery/dist/jquery.min.js"></script>
-        <!-- <script src="js/menu.js"></script> -->
+        <script src="js/menu.js"></script>
+        <script src="js/electron/hotkey.js"></script>
     </head>
-    <body>
+    <body ng-controller="twitchCtrl">
         <!--WRAPPER-->
         <div class="wrapper">
             <!--MENU-->
@@ -22,19 +23,19 @@
                 <div class="icons">
                     <ul>
                         <!--OPTIONS-->
-                        <li><a href="#"><i class="fa fa-gear"></i></a></li>
+                        <li><a href="/options"><i class="fa fa-gear"></i></a></li>
                     </ul>
                 </div>
+                <ng-view></ng-view>
             </div>
             <!--INSERT TEMPLATES-->
-<!--            <ng-view></ng-view>-->
         </div>  <!--END WRAP-->
         <!--MODULE-->
         <script src="js/app.js"></script>
         <!--CONTROLLERS-->
-<!--        <script src="js/controllers/twitchCtrl.js"></script>-->
-<!--        <script src="js/controllers/streamCtrl.js"></script>-->
+       <script src="js/controllers/twitchCtrl.js"></script>
+       <script src="js/controllers/streamCtrl.js"></script>
         <!--DIRECTIVES-->
-<!--        <script src="js/directives/directive.js"></script>-->
+       <script src="js/directives/directive.js"></script>
     </body>
 </html>

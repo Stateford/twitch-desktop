@@ -117,7 +117,16 @@ class Config {
     */
     static default() {
         // set our defaults
-        let defaults = { options: { quality: "source", chat: false }, vlcPath: null };
+        let defaults = {
+            "options": {
+                "quality": "source",
+                "chat": false,
+                "vlc": false,
+                "html5": false,
+                "twitchPlayer" : true
+            },
+            "vlcPath": "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe",
+        };
         // write to config
         fs.stat(`${process.cwd()}/data/`, function(err) {
             if(err) {

@@ -7,6 +7,9 @@
  * @description
  * Script to make requests to a server
 */
+/**
+ * NOTE: This file is current broken, not producing full request
+*/
 
 // Modules
 const http = require('http');
