@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "dotenv": "^2.0.0",
-    "request": "^2.74.0",
     "twitch-get-stream": "^0.3.2"
   },
   "devDependencies": {
@@ -16,7 +15,8 @@
   },
   "scripts": {
     "test": "electron main.js",
-    "start": "electron main.js"
+    "start": "electron main.js",
+    "server": "node ./server/server.js"
   },
   "author": "idietmoran <idietmoran@gmail.com>",
   "license": "MIT"

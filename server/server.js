@@ -7,7 +7,7 @@
 require('dotenv').load();
 const express = require('express');
 const app = express();
-const request = require('request');
+const request = require('../scripts/request');
 const twitch = require('twitch-get-stream');
 
 // API CALLS

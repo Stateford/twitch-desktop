@@ -4,14 +4,10 @@
  * License: MIT
  */
 /**
- * @description
- * Script to make requests to a server
+ * @description : Script to make requests to a server
 */
-/**
- * NOTE: This file is current broken, not producing full request
-*/
-
 // Modules
+
 const http = require('http');
 const https = require('https');
 const url = require('url');
@@ -19,15 +15,19 @@ const url = require('url');
 class Request {
     /**
      * @description : makes a request to protocol http
-     * @param {object} options : passes an object to http.request
-     * @param {function} callback  : passes err or  data to callback
-     * @returns {function(err, data)};
+     * @param {Object} options : passes an object to http.request
+     * @param {Function} callback  : passes err or  data to callback
+     * @returns {Function(err, data)};
     */
     static http(options, callback) {
+        let data = "";
         let req = http.request(options, function(res) {
             res.setEncoding('utf8');
 
-            res.on('data', function(data) {
+            res.on('data', function(chunk) {
+                data += chunk;
+            });
+            res.on('end', function() {
                 callback(null, data);
             });
         });
@@ -35,7 +35,6 @@ class Request {
             callback(err.message, null);
         });
         req.end();
-        return;
     }
     /**
      * @description : makes a request to protocol https
@@ -44,10 +43,15 @@ class Request {
      * @returns {function(err, data)};
     */
     static https(options, callback) {
+        let data = "";
         let req = https.request(options, function(res) {
             res.setEncoding('utf8');
 
-            res.on('data', function(data) {
+            res.on('data', function(chunk) {
+                data += chunk;
+            });
+
+            res.on('end', function() {
                 callback(null, data);
             });
         });
