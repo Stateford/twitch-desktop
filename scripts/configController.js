@@ -121,6 +121,7 @@ class Config {
             "options": {
                 "quality": "source",
                 "chat": false,
+                "popoutChat": false,
                 "vlc": false,
                 "html5": false,
                 "twitchPlayer" : true
