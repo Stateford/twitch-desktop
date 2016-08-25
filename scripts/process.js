@@ -27,14 +27,5 @@ class Process {
         /*
          * NOTE: set logic to get twitch stream url here
         */
-
-        twitchStreams.get(stream)
-        .then(function(streams) {
-            for(var i in streams) {
-                if(streams[i].quality.toLowerCase() === link.options.quality) {
-                    return streams[i];
-                }
-            }
-        });
     }
 }

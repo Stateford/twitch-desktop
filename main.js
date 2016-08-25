@@ -31,7 +31,7 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
     // Create the browser windows
 
-    mainWindow = new BrowserWindow({width: 800, height: 600, frame: true, resizeable: true});
+    mainWindow = new BrowserWindow({width: 825, height: 558, minWidth: 825, minHeight: 558, frame: true, resizeable: true});
 
     mainWindow.loadURL(`file://${__dirname}/client/index.html`);
 

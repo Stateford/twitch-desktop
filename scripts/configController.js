@@ -26,13 +26,22 @@ class Config {
      * @returns {function(err, success)};
  }
     */
+
+    // set VLC options
+    static vlcOptions(option)  {
+        // check type
+         if(typeof option === "string") {
+
+         }
+    }
+
     static vlcPath(path, callback) {
         // check if argument is a string
-        if(typeof(path) === 'string') {
+        if(typeof path === 'string') {
             // check if path exists
             fs.stat(path, function(err) {
                 if(err) {
-                    callback(INVALID_PATH, null);
+                    callback("INVALID_PATH" + err, null);
                     return;
                 }
                 try {
@@ -91,7 +100,7 @@ class Config {
     */
     static setChat(bool, callback) {
         // check if argument is a boolean
-        if(typeof(bool) === boolean) {
+        if(typeof bool === 'boolean') {
             try {
                 // import our config
                 let config = require(`${process.cwd()}/data/config.json`);

@@ -15,6 +15,9 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
                .when('/options', {
                    templateUrl: 'client/views/options.html'
                })
+               .when('/games', {
+                   templateUrl: 'client/views/game.html'
+               })
                .otherwise({
                    redirectTo: "/"
                });

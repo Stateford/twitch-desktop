@@ -10,7 +10,7 @@
         <script src="lib/angular/angular.min.js"></script>
         <script src="lib/angular-route/angular-route.min.js"></script>
         <script src="js/menu.js"></script>
-        <script src="js/electron/hotkey.js"></script>
+        <!-- <script src="js/electron/hotkey.js"></script> -->
     </head>
     <body ng-controller="twitchCtrl">
         <!--WRAPPER-->
@@ -18,15 +18,79 @@
             <!--MENU-->
             <div class="menu">
                 <!--LOGO-->
-                <div class="logo"></div>
+                <div class="logo">
+                    <i class="fa fa-twitch" aria-hidden="true"></i>
+                </div>
                 <!--ICONS-->
                 <div class="icons">
                     <ul>
-                        <!--OPTIONS-->
-                        <li><a href="/options"><i class="fa fa-gear"></i></a></li>
+                        <li><a href="/featured"><i class="fa fa-television" aria-hidden="true"></i></a></li>
+                        <li><a href="/channels"><i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
+                        <li><a href="/games"><i class="fa fa-gamepad" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                        <li><a href="/search"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                        <li><a href="/dashboard"><i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
+                        <li><a href="/options"><i class="fa fa-gear" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
-                <ng-view></ng-view>
+            </div>  <!--END MENU-->
+            <ng-view class="viewport"></ng-view>
+
+            <div class="default">
+                <div class="default-tiles">
+                    <!--FEATURED CHANNELS-->
+                    <div class="tile">
+                        <div class="tile-container">
+                            <a href="#"><i class="fa fa-television" aria-hidden="true"></i></a>
+                            <p>FEATURED</p>
+                        </div>
+                    </div>
+                    <!--CHANNELS-->
+                    <div class="tile">
+                        <div class="tile-container">
+                            <a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i></a>
+                            <p>CHANNELS</p>
+                        </div>
+                    </div>
+                    <!--GAMES-->
+                    <div class="tile">
+                        <div class="tile-container">
+                            <a href="#"><i class="fa fa-gamepad" aria-hidden="true"></i></a>
+                            <p>GAMES</p>
+                        </div>
+                    </div>
+                    <!--FOLLOWING-->
+                    <div class="tile">
+                        <div class="tile-container">
+                            <a href="/following"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                            <p>FOLLOWING</p>
+                            <p>(COMING SOON)</p>
+                        </div>
+                    </div>
+                    <!--SEARCH-->
+                    <div class="tile">
+                        <div class="tile-container">
+                            <a href="/search"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <p>SEARCH</p>
+                        </div>
+                    </div>
+                    <!--DASHBOARD-->
+                    <div class="tile">
+                        <div class="tile-container">
+                            <a href="/dashboard"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+                            <p>DASHBOARD</p>
+                        </div>
+                    </div>
+                    <!--OPTIONS-->
+                    <div class="tile">
+                        <div class="tile-container">
+                            <a href="/options"><i class="fa fa-gear" aria-hidden="true"></i></a>
+                            <p>OPTIONS</p>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
             <!--INSERT TEMPLATES-->
         </div>  <!--END WRAP-->
