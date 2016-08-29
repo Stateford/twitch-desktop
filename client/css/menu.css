@@ -37,10 +37,26 @@ body {
     color: black;
 }
 
+.menu-active {
+    box-shadow: inset 2px 0px 0px 0px rgba(0,88,240,1);
+}
+
+.menu-button {
+    cursor: pointer;
+    text-align: center;
+    margin-top: 5px;
+}
+
 .icons ul {
     list-style: none;
     margin: 0;
+    margin-top: 20px;
     padding: 0;
+}
+
+.icons ul i {
+    font-size: 1.5em;
+    color: grey;
 }
 
 .viewport {
