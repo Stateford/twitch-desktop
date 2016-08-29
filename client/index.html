@@ -24,13 +24,13 @@
                 <!--ICONS-->
                 <div class="icons">
                     <ul>
-                        <li><a href="/featured"><i class="fa fa-television" aria-hidden="true"></i></a></li>
-                        <li><a href="/channels"><i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
-                        <li><a href="/games"><i class="fa fa-gamepad" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                        <li><a href="/search"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                        <li><a href="/dashboard"><i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
-                        <li><a href="/options"><i class="fa fa-gear" aria-hidden="true"></i></a></li>
+                        <li class="menu-button" id="menu-featured"><a href="/featured"><i class="fa fa-television" aria-hidden="true"></i></a></li>
+                        <li class="menu-button" id="menu-channels"><a href="/channels"><i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
+                        <li class="menu-button" id="menu-games"><a href="/games"><i class="fa fa-gamepad" aria-hidden="true"></i></a></li>
+                        <li class="menu-button"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                        <li class="menu-button"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                        <li class="menu-button" id="menu-dashboard"><a href="/dashboard"><i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
+                        <li class="menu-button" id="menu-options"><a href="/options"><i class="fa fa-gear" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
             </div>  <!--END MENU-->
@@ -39,28 +39,28 @@
             <div class="default">
                 <div class="default-tiles">
                     <!--FEATURED CHANNELS-->
-                    <div class="tile">
+                    <div class="tile" id="tile-featured">
                         <div class="tile-container">
                             <a href="#"><i class="fa fa-television" aria-hidden="true"></i></a>
                             <p>FEATURED</p>
                         </div>
                     </div>
                     <!--CHANNELS-->
-                    <div class="tile">
+                    <div class="tile" id="tile-channels">
                         <div class="tile-container">
                             <a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i></a>
                             <p>CHANNELS</p>
                         </div>
                     </div>
                     <!--GAMES-->
-                    <div class="tile">
+                    <div class="tile" id="tile-games">
                         <div class="tile-container">
                             <a href="#"><i class="fa fa-gamepad" aria-hidden="true"></i></a>
                             <p>GAMES</p>
                         </div>
                     </div>
                     <!--FOLLOWING-->
-                    <div class="tile">
+                    <div class="tile" id="tile-following">
                         <div class="tile-container">
                             <a href="/following"><i class="fa fa-heart" aria-hidden="true"></i></a>
                             <p>FOLLOWING</p>
@@ -68,21 +68,21 @@
                         </div>
                     </div>
                     <!--SEARCH-->
-                    <div class="tile">
+                    <div class="tile" id="tile-search">
                         <div class="tile-container">
                             <a href="/search"><i class="fa fa-search" aria-hidden="true"></i></a>
                             <p>SEARCH</p>
                         </div>
                     </div>
                     <!--DASHBOARD-->
-                    <div class="tile">
+                    <div class="tile" id="tile-dashboard">
                         <div class="tile-container">
                             <a href="/dashboard"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
                             <p>DASHBOARD</p>
                         </div>
                     </div>
                     <!--OPTIONS-->
-                    <div class="tile">
+                    <div class="tile" id="tile-options">
                         <div class="tile-container">
                             <a href="/options"><i class="fa fa-gear" aria-hidden="true"></i></a>
                             <p>OPTIONS</p>

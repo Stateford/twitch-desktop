@@ -8,6 +8,9 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
                    controller: 'twitchCtrl',
                    templateUrl: 'client/views/default.html'
                })
+               .when('/featured', {
+                   templateUrl: 'client/views/featured.html'
+               })
                .when('channel/:channel', {
                    controller: 'streamCtrl',
                    templateUrl: 'client/views/channel.html'
@@ -16,7 +19,19 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
                    templateUrl: 'client/views/options.html'
                })
                .when('/games', {
-                   templateUrl: 'client/views/game.html'
+                   templateUrl: 'client/views/games.html'
+               })
+               .when('/games/:game', {
+                   templateUrl: 'client/views/streamsGame.html'
+               })
+               .when('/channels', {
+                   templateUrl: 'client/views/channels.html'
+               })
+               .when('/following', {
+                   templateUrl: 'client/views/following.html'
+               })
+               .when('/dashboard', {
+                   templateUrl: 'client/views/dashboard.html'
                })
                .otherwise({
                    redirectTo: "/"
