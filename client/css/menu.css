@@ -24,6 +24,17 @@ body {
 
 /*MENU*/
 
+/*LOGO*/
+.logo {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.logo i {
+    font-size: 1.6em;
+    color: white;
+}
+
 .menu {
     position: absolute;
     height: 100vh;
@@ -45,6 +56,15 @@ body {
     cursor: pointer;
     text-align: center;
     margin-top: 5px;
+}
+
+.menu-button:hover {
+    box-shadow: inset 2px 0px 0px 0px rgba(0,88,240,1);
+    background-color: #626262;
+}
+
+.menu-button:hover i {
+    color: #262626;
 }
 
 .icons ul {
