@@ -1,0 +1,34 @@
+// pages/default.scss
+.default {
+    position: absolute;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    background-color: #171717;
+    .default-tiles {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 100vw;
+        .tile {
+            width: 200px;
+            cursor: pointer;
+            border: 1px solid rgba(56, 136, 160, 0.17);
+            &hover {
+                background-color: #484848;
+            }
+            i {
+                display: block;
+                font-size: 40px;
+                text-align: center;
+                color: #3888a0;
+            }
+            p {
+                text-align: center;
+                color: #3888a0;
+            }
+            .tile-container {
+                margin-top: 70%;
+            }
+        }
+    }
+}

@@ -4,20 +4,78 @@ html, body, .wrapper {
   width: 100%;
   height: 100%; }
 
+body {
+  overflow: hidden; }
+
 h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0; }
 
-a {
-  text-decoration: none;
-  color: black; }
+.viewport {
+  position: absolute;
+  left: 50px;
+  width: 100%;
+  height: 100%; }
 
 .menu {
+  position: absolute;
   height: 100vh;
   background-color: #383838;
+  z-index: 2;
   width: 50px; }
+  .menu .logo {
+    margin-top: 10px;
+    text-align: center; }
+    .menu .logo i {
+      font-size: 1.6em;
+      color: white; }
+  .menu a {
+    text-decoration: none;
+    color: black; }
+  .menu .icons ul {
+    list-style: none;
+    margin: 20px 0px 0px 0px;
+    padding: 0; }
+    .menu .icons ul i {
+      font-size: 1.5em;
+      color: grey; }
+  .menu .icons .menu-button {
+    cursor: pointer;
+    text-align: center;
+    margin-top: 5px; }
+    .menu .icons .menu-buttonhover {
+      box-shadow: inset 2px 0px 0px 0px #0058f0; }
+    .menu .icons .menu-buttonhover i {
+      color: #262626; }
 
-.icons ul {
-  list-style: none; }
+.default {
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  background-color: #171717; }
+  .default .default-tiles {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100vw; }
+    .default .default-tiles .tile {
+      width: 200px;
+      cursor: pointer;
+      border: 1px solid rgba(56, 136, 160, 0.17); }
+      .default .default-tiles .tilehover {
+        background-color: #484848; }
+      .default .default-tiles .tile i {
+        display: block;
+        font-size: 40px;
+        text-align: center;
+        color: #3888a0; }
+      .default .default-tiles .tile p {
+        text-align: center;
+        color: #3888a0; }
+      .default .default-tiles .tile .tile-container {
+        margin-top: 70%; }
+
+.hidden {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

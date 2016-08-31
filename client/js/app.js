@@ -13,7 +13,7 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
                })
                .when('channel/:channel', {
                    controller: 'streamCtrl',
-                   templateUrl: 'client/views/channel.html'
+                   templateUrl: 'client/views/stream.html'
                })
                .when('/options', {
                    templateUrl: 'client/views/options.html'
@@ -25,6 +25,7 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
                    templateUrl: 'client/views/streamsGame.html'
                })
                .when('/channels', {
+                   controller: 'channelsCtrl',
                    templateUrl: 'client/views/channels.html'
                })
                .when('/following', {

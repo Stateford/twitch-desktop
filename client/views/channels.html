@@ -1,5 +1,17 @@
-<div class="channels">
+<div class="channels" ng-controller="channelsCtrl">
     <div class="channels-wrap">
-        <h1>CHANNELS</h1>
+        <!-- CHANNEL TILE -->
+        <div class="channel-tile">
+
+            <div class="channel-tile-info">
+                <img ng-src="{{streams.thumbnail}}" />
+                <div class="channel-tile-stats">
+                    <p>{{streams.title}}</p>
+                    <p>{{streams.display_name}}</p>
+                    <p>{{streams.viewers}}</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>

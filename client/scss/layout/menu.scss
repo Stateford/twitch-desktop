@@ -1,13 +1,43 @@
 // layout/menu.scss
 
 .menu {
+    position: absolute;
     height: 100vh;
-    background-color: rgb(56, 56, 56);
+    background-color: #383838;
+    z-index: 2;
     width: 50px;
-}
-
-.icons {
-    ul {
-        list-style: none;
+    .logo {
+        margin-top: 10px;
+        text-align: center;
+        i {
+            font-size: 1.6em;
+            color: white;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .icons {
+        ul {
+            list-style: none;
+            margin: 20px 0px 0px 0px;
+            padding: 0;
+            i {
+                font-size: 1.5em;
+                color: grey;
+            }
+        }
+        .menu-button {
+            cursor: pointer;
+            text-align: center;
+            margin-top: 5px;
+            &hover {
+                box-shadow: inset 2px 0px 0px 0px rgba(0,88,240,1);
+            }
+            &hover i {
+                color: #262626;
+            }
+        }
     }
 }

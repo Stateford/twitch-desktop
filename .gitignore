@@ -7,3 +7,4 @@
 /install/
 CHANGELOG.md
 .sass-cache/
+*.map

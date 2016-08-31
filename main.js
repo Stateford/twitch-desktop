@@ -40,9 +40,9 @@ app.on('ready', function() {
     */
 
 
-    // Open the DevTools
-    // for development
-    // mainWindow.webContents.openDevTools();
+    // NOTE: Open the DevTools
+    // NOTE: for development
+    mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed
     mainWindow.on('closed', function() {
