@@ -1,5 +1,9 @@
 // app/slectron/tray.js
 
+/**
+ * @description
+ * creates a tray object
+ */
 const {app, Menu, Tray} = require('electron');
 
 let tray = null;

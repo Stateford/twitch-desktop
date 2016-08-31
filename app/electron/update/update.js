@@ -1,5 +1,8 @@
 // scripts/update.js
-
+/**
+  * @description
+  * Handles updating on the server
+ */
 const os = require('os');
 
 const system = [
@@ -23,6 +26,11 @@ const sys = {
         require('./linux')();
     }
 };
+
+/**
+ * @description
+ * checks current platform and updates the program
+ */
 
 function update() {
     let curOS = os.platform();
