@@ -9,7 +9,15 @@ $(document).ready(function() {
             $('.default').addClass('hidden');
         }
     });
-
+    // MOUSEOVER
+    let mouseOver = {
+        featured: false,
+        channels: false,
+        games: false,
+        following: false,
+        dashboard: false,
+        options: false
+    };
     // MENU ACTIVE
     let menuButtons = [
         'featured',
@@ -93,5 +101,25 @@ $(document).ready(function() {
         $("#menu-options").addClass('menu-active');
     });
 
+    // COMING SOON
+    function dispCS() {
+        for(let i in mouseOver) {
+            if(mouseOver[i]) {
+                $(`#cs-${i}`).removeClass('hidden');
+            }
+        }
+    }
+
+    $('#menu-following').on('mouseover', function() {
+        mouseOver.following = true;
+        setTimeout(function() {
+            dispCS();
+        }, 700);
+    });
+
+    $('#menu-following').on('mouseleave', function() {
+        mouseOver.following = false;
+        $('#cs-following').addClass('hidden');
+    });
 
 });

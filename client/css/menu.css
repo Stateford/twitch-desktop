@@ -32,7 +32,7 @@ body {
 
 .logo i {
     font-size: 1.6em;
-    color: white;
+    color: purple;
 }
 
 .menu {
@@ -130,4 +130,25 @@ body {
 
 .tile-container {
     margin-top: 70%;
+}
+
+/* COMING SOON*/
+.coming-soon {
+    position: absolute;
+}
+/*TODO: fix position, color, and font*/
+#cs-following {
+    position: absolute;
+    box-shadow: inset 2px 0px 0px 0px rgba(0,88,240,1);
+    left: 50px;
+    top: 130px;
+    width: 150px;
+    background-color: #484848;
+}
+
+#cs-following p {
+    color: #3888a0;
+    margin-left: 5px;
+    font-size: 0.9em;
+    color: grey;
 }
