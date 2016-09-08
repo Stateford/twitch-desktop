@@ -78,4 +78,32 @@ h1, h2, h3, h4, h5 {
 .hidden {
   display: none; }
 
+#search-box {
+  position: absolute;
+  left: 50px;
+  top: 175px;
+  padding: 5px;
+  background-color: #484848; }
+  #search-box #search-box-container #search label i {
+    display: inline-block;
+    color: grey; }
+  #search-box #search-box-container #search #search-input {
+    background-color: #464646;
+    border: 0.5px solid rgba(255, 255, 255, 0.2); }
+
+.coming-soon {
+  position: absolute; }
+  .coming-soon #cs-following {
+    position: absolute;
+    box-shadow: inset 2px 0px 0px 0px #0058f0;
+    left: 50px;
+    top: 130px;
+    width: 150px;
+    background-color: #484848; }
+    .coming-soon #cs-following .cs-following-container p {
+      color: #3888a0;
+      margin-left: 5px;
+      font-size: 0.9em;
+      color: grey; }
+
 /*# sourceMappingURL=main.css.map */

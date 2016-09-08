@@ -1,0 +1,23 @@
+// module/search.scss
+
+#search-box {
+    position: absolute;
+    left: 50px;
+    top: 175px;
+    padding: 5px;
+    background-color: #484848;
+    #search-box-container {
+        #search {
+            label {
+                i {
+                    display: inline-block;
+                    color: grey;
+                }
+            }
+            #search-input {
+                background-color: #464646;
+                border: 0.5px solid rgba(255, 255, 255, .2);
+            }
+        }
+    }
+}

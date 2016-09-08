@@ -128,15 +128,20 @@ class Config {
         // set our defaults
         let defaults = {
             "options": {
+                "defaultPage": "featured",
                 "quality": "source",
                 "chat": false,
-                "popoutChat": false,
-                "vlc": false,
+                "vlc": {
+                    "enabled" : true,
+                    "path" : "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe"
+                },
+                "vlcEmbed": false,
                 "html5": false,
-                "twitchPlayer" : true
-            },
-            "vlcPath": "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe",
+                "twitchPlayer" : true,
+                "notifications": false
+            }
         };
+
         // write to config
         fs.stat(`${process.cwd()}/data/`, function(err) {
             if(err) {

@@ -44,64 +44,17 @@
                     </div>
                 </div>
             </div>
-            <ng-view class="viewport"></ng-view>
-
-            <div class="default">
-                <div class="default-tiles">
-                    <!--FEATURED CHANNELS-->
-                    <div class="tile" id="tile-featured">
-                        <div class="tile-container">
-                            <a href="#"><i class="fa fa-television" aria-hidden="true"></i></a>
-                            <p>FEATURED</p>
-                        </div>
+            <!-- SEARCH -->
+            <div id="search-box" class="hidden">
+                <div id="search-box-container">
+                    <div id="search">
+                        <label><i class="fa fa-search" aria-hidden="true"></i></label>
+                        <input id="search-input" type="text" placeholder="search" />
                     </div>
-                    <!--CHANNELS-->
-                    <div class="tile" id="tile-channels">
-                        <div class="tile-container">
-                            <a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i></a>
-                            <p>CHANNELS</p>
-                        </div>
-                    </div>
-                    <!--GAMES-->
-                    <div class="tile" id="tile-games">
-                        <div class="tile-container">
-                            <a href="#"><i class="fa fa-gamepad" aria-hidden="true"></i></a>
-                            <p>GAMES</p>
-                        </div>
-                    </div>
-                    <!--FOLLOWING-->
-                    <div class="tile" id="tile-following">
-                        <div class="tile-container">
-                            <a href="/following"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                            <p>FOLLOWING</p>
-                            <p>(COMING SOON)</p>
-                        </div>
-                    </div>
-                    <!--SEARCH-->
-                    <div class="tile" id="tile-search">
-                        <div class="tile-container">
-                            <a href="/search"><i class="fa fa-search" aria-hidden="true"></i></a>
-                            <p>SEARCH</p>
-                        </div>
-                    </div>
-                    <!--DASHBOARD-->
-                    <div class="tile" id="tile-dashboard">
-                        <div class="tile-container">
-                            <a href="/dashboard"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
-                            <p>DASHBOARD</p>
-                        </div>
-                    </div>
-                    <!--OPTIONS-->
-                    <div class="tile" id="tile-options">
-                        <div class="tile-container">
-                            <a href="/options"><i class="fa fa-gear" aria-hidden="true"></i></a>
-                            <p>OPTIONS</p>
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
+            <ng-view class="viewport"></ng-view>
+
             <!--INSERT TEMPLATES-->
         </div>  <!--END WRAP-->
         <!--MODULE-->

@@ -62,6 +62,31 @@ $(document).ready(function() {
         }
         $(this).addClass('menu-active');
     });
+    // SEARCH
+    let searchOpen = false;
+    $('#menu-search').on('click', function(event) {
+        event.stopPropagation();
+        if($('#search-box').hasClass('hidden')) {
+            searchOpen = true;
+            $('#search-box').removeClass('hidden');
+        } else {
+            searchOpen = false;
+            $('#search-box').addClass('hidden');
+        }
+    });
+    // SEARCH
+    $("#search-box").on('click', function(event) {
+        event.stopPropagation();
+    });
+
+
+    // CLOSE MENUS
+    $(window).on('click', function() {
+        if(searchOpen) {
+            $('#search-box').addClass('hidden');
+        }
+    });
+
 
 
     // TILES

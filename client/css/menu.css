@@ -32,7 +32,7 @@ body {
 
 .logo i {
     font-size: 1.6em;
-    color: purple;
+    color: white;
 }
 
 .menu {
@@ -95,41 +95,24 @@ body {
     width: 100%;
     background-color: #171717;
 }
-/*TILES*/
-.default-tiles {
-    display: inline-flex;
-    flex-wrap: wrap;
-    width: 100vw;
-}
 
-.tile {
-    width: 200px;
-    cursor: pointer;
-    border: 1px solid rgba(56, 136, 160, 0.17);
-}
-
-.tile a {
-    text-decoration: none;
-}
-
-.tile:hover {
+/*SEARCH*/
+#search-box {
+    position: absolute;
+    left: 50px;
+    top: 175px;
+    padding: 5px;
     background-color: #484848;
 }
 
-.tile i {
-    display: block;
-    font-size: 40px;
-    text-align: center;
-    color: #3888a0;
+#search-box i {
+    display: inline-block;
+    color: grey;
 }
 
-.tile p {
-    text-align: center;
-    color: #3888a0;
-}
-
-.tile-container {
-    margin-top: 70%;
+#search-input {
+    background-color: #464646;
+    border: 0.5px solid rgba(255, 255, 255, .2);
 }
 
 /* COMING SOON*/
