@@ -118,6 +118,7 @@ body {
 /* COMING SOON*/
 .coming-soon {
     position: absolute;
+    z-index: 3;
 }
 /*TODO: fix position, color, and font*/
 #cs-following {

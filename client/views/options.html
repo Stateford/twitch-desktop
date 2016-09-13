@@ -2,10 +2,18 @@
     <div id="options-wrap">
         <div id="options-border">
             <div id="options-list">
+                <!--DEFAULT PAGE-->
+                <div id="options-default-page">
+                    <select id="options-page">
+                        <option value="featured">Featured</option>
+                        <option value="following" disabled>Following</option>
+                        <option value="dashboard" disabled>Dashboard</option>
+                    </select>
+                </div>
                 <!--VIDEO PLAYER-->
                 <div id="options-player">
+                    <label>Player: </label>
                     <select id="player-select">
-                        <label>Player: </label>
                         <option value="default">Twitch(default)</option>
                         <option value="html5" disabled>HTML5</option>
                         <option value="vlc" disabled>VLC</option>
@@ -38,3 +46,4 @@
         </div>
     </div>
 </div>
+ <script src="../js/options.js"></script>
