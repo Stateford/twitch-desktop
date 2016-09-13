@@ -99,7 +99,8 @@ h1, h2, h3, h4, h5 {
     left: 50px;
     top: 130px;
     width: 150px;
-    background-color: #484848; }
+    background-color: #484848;
+    border-radius: 10%; }
     .coming-soon #cs-following .cs-following-container p {
       color: #3888a0;
       margin-left: 5px;

@@ -127,6 +127,7 @@ body {
     top: 130px;
     width: 150px;
     background-color: #484848;
+    border-radius: 10%;
 }
 
 #cs-following p {

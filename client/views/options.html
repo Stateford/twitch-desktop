@@ -2,7 +2,38 @@
     <div id="options-wrap">
         <div id="options-border">
             <div id="options-list">
-                <h1>OPTIONS</h1>
+                <!--VIDEO PLAYER-->
+                <div id="options-player">
+                    <select id="player-select">
+                        <label>Player: </label>
+                        <option value="default">Twitch(default)</option>
+                        <option value="html5" disabled>HTML5</option>
+                        <option value="vlc" disabled>VLC</option>
+                        <option value="vlc-inline" disabled>VLC Inline</option>
+                    </select>
+                </div>
+                <!--VLC PATH-->
+                <div id="options-vlc-path">
+                    <label>VLC path:</label> <br/>
+                    <input type="text"/>
+                </div>
+                <!--CHAT-->
+                <div id="options-chat">
+                    <select id="chat-select">
+                        <option value="none">None</option>
+                        <option value="popout" disabled>Pop-out Chat</option>
+                        <option value="inline" disabled>Inline</option>
+                    </select>
+                </div>
+                <!--QUALITY-->
+                <div id="options-quality">
+                    <select id="quality-select">
+                        <option value="source">Source</option>
+                    </select>
+                </div>
+
+                <button type="button" id="options-submit">Submit</button>
+                <button type="button" id="options-cancel">Cancel</button>
             </div>
         </div>
     </div>
