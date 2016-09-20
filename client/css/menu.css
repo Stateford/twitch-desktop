@@ -23,6 +23,9 @@ body {
 }
 
 /*MENU*/
+.ui {
+    *-webkit-user-select:none;*
+}
 
 /*LOGO*/
 .logo {
