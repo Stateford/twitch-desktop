@@ -15,6 +15,7 @@
 // scripts/configController.js
 require('../app/error');
 const fs = require('fs');
+const os = require('os');
 
 class Config {
     /**
@@ -141,6 +142,8 @@ class Config {
         };
 
         // write to config
+        // NOTE: config is written to the users home directory. EX: c:\users\<username>\twitch\config.json
+        // TODO: set correct directory for writing files after test is done
         fs.stat(`${process.cwd()}/data/`, function(err) {
             if(err) {
                 fs.mkdir(`${process.cwd()}/data/`, function(err) {
