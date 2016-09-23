@@ -1,13 +1,36 @@
 // scripts/chat.js
 
-const electron = require('electron');
-const shell = require('electron').shell;
+/**
+ * @description : parses the config and returns the proper information
+ */
 
 class Chat {
-    static popout(channel) {
-        return `https://www.twitch.tv/${channel}/chat?popout=`;
+    /**
+     * @description :
+     */
+     static inline(channel, callback) {
+
+         //TODO : 
+
+     }
+    /**
+     * @description : returns the URL for the current channels popoutchat
+     */
+    static popout(channel, callback) {
+        callback(`https://www.twitch.tv/${channel}/chat?popout=`);
     }
-    static run() {
+    /**
+     * @description : parses the config and returns the proper channel infomration
+     */
+    static run(channel, callback) {
         let config = require('../data/config.json');
+
+        if(config.options.chat.enabled && config.options.chat.popoutChat) {
+            this.popout(channel, function(chatUrl) {
+                callback(chatUrl);
+            });
+        } else if(config.options.chat.enabled && !config.options.chat.popoutChat) {
+
+        }
     }
 }

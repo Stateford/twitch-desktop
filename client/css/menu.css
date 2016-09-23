@@ -24,7 +24,7 @@ body {
 
 /*MENU*/
 .ui {
-    *-webkit-user-select:none;*
+    -webkit-user-select:none;
 }
 
 /*LOGO*/
@@ -140,3 +140,8 @@ body {
     font-size: 0.9em;
     color: grey;
 }
+
+
+
+
+/*OPTIONS*/

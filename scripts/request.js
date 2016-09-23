@@ -7,7 +7,7 @@
  * @description : Script to make requests to a server
 */
 // Modules
-
+// =======
 const http = require('http');
 const https = require('https');
 const url = require('url');
@@ -19,6 +19,7 @@ class Request {
      * @param {Function} callback  : passes err or  data to callback
      * @returns {Function(err, data)};
     */
+    // TODO: add a way to include POST data;
     static http(options, callback) {
         let data = "";
         let req = http.request(options, function(res) {
@@ -42,6 +43,7 @@ class Request {
      * @param {function} callback  : passes err or  data to callback
      * @returns {function(err, data)};
     */
+    // TODO : add a way to take POST params
     static https(options, callback) {
         let data = "";
         let req = https.request(options, function(res) {
@@ -62,7 +64,40 @@ class Request {
         req.end();
     }
     /**
-     * @description : gets a url as an argument and returns correct data
+     * @description : gets a url as an argument and makes a POST request
+     * @param {String} link : enter an URL
+     * @param {Object} params: post request
+     * @param {function} callback: returns either an error or data
+     * @return : {function(err, data)}
+    */
+    static post(link, params, callback) {
+        if(arguments.length < 3 && typeof callback === undefined) {
+            callback = params;
+        }
+        let options = url.parse(link);
+        options.method = "POST";
+
+        switch(options.protocol) {
+            case 'http:':
+                this.http(options, function(err, data) {
+                    if(err) callback(err);
+                    callback(null, data);
+                });
+                break;
+            case 'https:':
+                this.https(options, function(err, data) {
+                    if(err) callback(err);
+                    callback(null, data);
+                });
+                break;
+            default:
+                callback(`${options.protocol} is not a valid protocol`);
+                break;
+        }
+    }
+
+    /**
+     * @description : gets a url as an argument and returns a GET request
      * @param {String} link : enter an URL
      * @param {function} callback: returns either an error or data
      * @return : {function(err, data)}
