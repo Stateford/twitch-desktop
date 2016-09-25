@@ -75,6 +75,12 @@ h1, h2, h3, h4, h5 {
       .default .default-tiles .tile .tile-container {
         margin-top: 70%; }
 
+.options {
+  background-color: black; }
+  .options #options-border {
+    background-color: grey;
+    color: white; }
+
 .hidden {
   display: none; }
 
@@ -111,5 +117,8 @@ h1, h2, h3, h4, h5 {
   width: 80%;
   background-color: black;
   height: 1px; }
+
+.ui {
+  -webkit-user-select: none; }
 
 /*# sourceMappingURL=main.css.map */

@@ -136,13 +136,35 @@ class Config {
                 "quality": "source",
                 "vlc": false,
                 "html5": false,
-                "twitchPlayer": true
+                "twitchPlayer": true,
+                "notifications": false,
+                "defaultWindow": "following"
             },
             "vlcPath": "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe"
         };
 
+        // check current OS for save location
+        function saveLoc(callback) {
+            let curOS = os.platform();
+            let sys = {
+                win32: `${os.homedir()}\\appdata\\local\\twitch\\config.json`,
+                linux: `${os.homedir()}\\.local\\twitch\\config.json`
+            };
+            switch(curOS) {
+                case "win32":
+                    callback(null, sys.win32);
+                    break;
+                case "linux":
+                    callback(null, sys.linux);
+                    break;
+                default:
+                    callback(`${curOS} is not a currently supported OS`);
+                    break;
+            }
+        }
+
         // write to config
-        // NOTE: config is written to the users home directory. EX: c:\users\<username>\twitch\config.json
+        // NOTE: config is written to the users home directory. EX: c:\users\<username>\appdata\local\twitch\config.json
         // TODO: set correct directory for writing files after test is done
         fs.stat(`${process.cwd()}/data/`, function(err) {
             if(err) {

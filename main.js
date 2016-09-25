@@ -52,3 +52,4 @@ app.on('ready', function() {
         mainWindow = null;
     });
 });
+// require('./app/electron/tray');
