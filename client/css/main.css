@@ -84,7 +84,11 @@ h1, h2, h3, h4, h5 {
   background-color: #141414; }
   .options #options-border {
     background-color: #212121;
-    color: #D3D3D3; }
+    color: #D3D3D3;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 10px 20px; }
 
 .hidden {
   display: none; }
