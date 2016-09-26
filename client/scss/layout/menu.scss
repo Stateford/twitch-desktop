@@ -3,7 +3,7 @@
 .menu {
     position: absolute;
     height: 100vh;
-    background-color: #383838;
+    background-color: #1E1E1E;
     z-index: 2;
     width: 50px;
     .logo {
@@ -24,20 +24,25 @@
             margin: 20px 0px 0px 0px;
             padding: 0;
             i {
-                font-size: 1.5em;
-                color: grey;
+                font-size: 1.4em;
+                color: #E5E3E8;
             }
         }
         .menu-button {
             cursor: pointer;
             text-align: center;
             margin-top: 5px;
-            &hover {
+            &:hover {
                 box-shadow: inset 2px 0px 0px 0px rgba(0,88,240,1);
             }
-            &hover i {
-                color: #262626;
+            &:hover i {
+                color: #B8B5C0;
             }
         }
     }
+}
+
+.menu-active {
+    box-shadow: inset 2px 0px 0px 0px rgba(0,88,240,1);
+    color: #E5E3E8;
 }

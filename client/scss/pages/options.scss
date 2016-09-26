@@ -1,9 +1,10 @@
 // pages/options.scss
 
 .options {
-    background-color: black; // placeholder
+    height: 100%;
+    background-color: $primary-background-color;
     #options-border {
-        background-color: grey;
-        color: white;
+        background-color: $tile-color;
+        color: $font-color;
     }
 }

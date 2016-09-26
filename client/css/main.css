@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5 {
 .menu {
   position: absolute;
   height: 100vh;
-  background-color: #383838;
+  background-color: #1E1E1E;
   z-index: 2;
   width: 50px; }
   .menu .logo {
@@ -37,16 +37,20 @@ h1, h2, h3, h4, h5 {
     margin: 20px 0px 0px 0px;
     padding: 0; }
     .menu .icons ul i {
-      font-size: 1.5em;
-      color: grey; }
+      font-size: 1.4em;
+      color: #E5E3E8; }
   .menu .icons .menu-button {
     cursor: pointer;
     text-align: center;
     margin-top: 5px; }
-    .menu .icons .menu-buttonhover {
+    .menu .icons .menu-button:hover {
       box-shadow: inset 2px 0px 0px 0px #0058f0; }
-    .menu .icons .menu-buttonhover i {
-      color: #262626; }
+    .menu .icons .menu-button:hover i {
+      color: #B8B5C0; }
+
+.menu-active {
+  box-shadow: inset 2px 0px 0px 0px #0058f0;
+  color: #E5E3E8; }
 
 .default {
   position: absolute;
@@ -76,10 +80,11 @@ h1, h2, h3, h4, h5 {
         margin-top: 70%; }
 
 .options {
-  background-color: black; }
+  height: 100%;
+  background-color: #141414; }
   .options #options-border {
-    background-color: grey;
-    color: white; }
+    background-color: #212121;
+    color: #D3D3D3; }
 
 .hidden {
   display: none; }
