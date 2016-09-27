@@ -3,7 +3,6 @@
 /**
  * @description : checks if full path exists. If it doesn't, it will be created.
 */
-
 /**
  * @NOTE: still WIP
 */
@@ -12,8 +11,10 @@ const fs = require('fs');
 const path = require('path');
 
 class CreatePath {
-    constructor(path) {
-        this.path = path;
+    constructor(dir) {
+        if(typeof dir === 'string') {
+            this.path = dir;
+        }
     }
     chkpath(callback) {
         if(path.isAbsolute(this.path)) {
@@ -22,11 +23,25 @@ class CreatePath {
             for(let i of bar) {
                 if(i.charAt(i.lenth - 1) === ':') {
                     test = path.join(tempPath, `${i}/`);
+                } else if(path.extname(i) !== '') {
+                    // TODO: fix this logic
+                    fs.writeFile(tempPath, data, function(err) {
+                        if(err) callback(err);
+                    });
                 } else {
                     tempPath = path.join(tempPath, i);
                 }
+                fs.stat(tempPath, function(err) {
+                    if(err) {
+                        fs.mkdir(tempPath, function(err) {
+                            if(err) callback(err);
+                        });
+                    }
+                });
             }
             callback(null, bar);
+        } else {
+            path.normalize(this.path);
         }
     }
 }

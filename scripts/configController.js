@@ -41,7 +41,7 @@ function saveLoc(callback) {
     }
 }
 */
-// NOTE:
+// NOTE: CREATE READ / WRITE STREAM
 class Config {
     constructor() {
         this.config = configPath;
