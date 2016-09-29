@@ -9,7 +9,7 @@
 */
 
 require('dotenv').load();
-const request = require('./request');
+const request = require('../bin/request');
 
 
 

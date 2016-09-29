@@ -27,5 +27,9 @@ function recursive(dir, data, callback=null) {
                 return;
             }
         }
+
+        if(!checkPath(dir, () => {})) {
+            callback(null, `${dir} false`);
+        }
     }
 }
