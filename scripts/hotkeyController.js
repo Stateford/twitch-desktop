@@ -3,7 +3,7 @@
 /**
  * @description : controls all changes to hotkeys
  */
-
+ 
 const fs = require('fs');
 
 class Hotkey {

@@ -1,6 +1,7 @@
 // pages/options.scss
 
 .options {
+    margin: 0;
     height: 100%;
     background-color: $primary-background-color;
     #options-border {
@@ -8,7 +9,6 @@
         color: $font-color;
         width: 90%;
         margin: 0 auto;
-        margin-top: 30px;
         padding: 10px 20px;
     }
 }
