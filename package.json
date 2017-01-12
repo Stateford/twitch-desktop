@@ -7,8 +7,7 @@
     "test": "test"
   },
   "dependencies": {
-    "dotenv": "^2.0.0",
-    "twitch-get-stream": "^0.3.2"
+    "dotenv": "^4.0.0"
   },
   "devDependencies": {
     "express": "^4.14.0"

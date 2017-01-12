@@ -14,7 +14,6 @@
 require('dotenv').load();
 const config = require('../data/config.json');
 const childProcess = require('child_process');
-const twitchStream = require('twitch-get-stream');
 
 class Process {
     static startStream(stream) {

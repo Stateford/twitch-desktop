@@ -12,6 +12,9 @@ const http = require('http');
 const https = require('https');
 const url = require('url');
 
+
+// TODO: add input for headers
+
 class Request {
     /**
      * @description : makes a request to protocol http
@@ -102,7 +105,10 @@ class Request {
      * @param {function} callback: returns either an error or data
      * @return : {function(err, data)}
     */
-    static get(link, callback) {
+    static get(link, headers, callback) {
+        if(arguments.length < 3 && typeof callback === undefined) {
+            callback = headers;
+        }
         // parse the link into a readable format for our other functions
         let options = url.parse(link);
         // check for our protocol
