@@ -8,11 +8,11 @@ function dispCurrent() {
 
 }
 // on load display current
-Window.onLoad(function() {
+Window.onLoad(() => {
     dispCurrent();
 });
 
-$('#options-submit').on('click', function() {
+$('#options-submit').on('click', () => {
     // Read config
     let config = require('../../data/config.json');
 
@@ -26,11 +26,11 @@ $('#options-submit').on('click', function() {
 
 
 // Cancel all current options
-$('#options-cancel').on('click', function() {
+$('#options-cancel').on('click', () => {
     dispCurrent();
 });
 
-$('#options-default').on('click', function() {
+$('#options-default').on('click', () => {
     //TODO: add alert window to confirm resetting to defaul
     Config.default();
 });

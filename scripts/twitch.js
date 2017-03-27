@@ -20,9 +20,9 @@ class Twitch {
      * @param {function} callback : takes paramers err, res to return if stream is live
     */
     static isLive(channel, callback) {
-        request.get(`${process.env}\\${channel}`, function(err, res) {
-            if(err) callback(err);
-            else callback(null, res);
+        request.get(`${process.env.STREAM_API}\\${channel}`, (err, res) => {
+            if(err) return callback(err);
+            else return callback(null, res);
         });
     }
 }

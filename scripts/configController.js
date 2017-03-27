@@ -71,7 +71,7 @@ class Config {
                  }
              }
          } else {
-             callback('INVALID_TYPE');
+             return callback('INVALID_TYPE');
          }
     }
     /**
@@ -86,10 +86,9 @@ class Config {
         // check if argument is a string
         if(typeof path === 'string') {
             // check if path exists
-            fs.stat(path, function(err) {
+            fs.stat(path, err => {
                 if(err) {
-                    callback("INVALID_PATH" + err, null);
-                    return;
+                    return callback("INVALID_PATH" + err, null);
                 }
                 try {
                     // import our config
@@ -102,10 +101,9 @@ class Config {
                     });
                     return;
                 } catch(e) {
-                    callback(e, null);
                     // reset our config to defaults
                     this.default();
-                    return;
+                    return callback(e, null);
                 }
             });
         }
@@ -128,7 +126,7 @@ class Config {
             // update our config
             config.options.quality = quality;
             // write to config
-            fs.writeFile(configPath, JSON.stringify(config, null, 4), function(err) {
+            fs.writeFile(configPath, JSON.stringify(config, null, 4), err => {
                 if(err) throw err;
             });
         } catch(e) {
@@ -152,14 +150,13 @@ class Config {
             for(let i of settings) {
                 if(str === i) {
                     config.options.defaultWindow = str;
-                    fs.writeFile(configPath, JSON.stringify(config, null, 4), function(err) {
+                    fs.writeFile(configPath, JSON.stringify(config, null, 4), err => {
                         if (err) throw err;
                     });
                 }
             }
         } else {
-            callback('INVLAD_TYPE');
-            return;
+            return callback('INVLAD_TYPE');
         }
     }
 
@@ -195,7 +192,7 @@ class Config {
                 config.options.chat.enabled = options.chat.enabled;
                 config.options.chat.popoutChat = options.chat.popoutChat;
                 // write to config
-                fs.writeFile(configPath, JSON.stringify(config, null, 4), function(err) {
+                fs.writeFile(configPath, JSON.stringify(config, null, 4), err => {
                     if(err) throw err;
                 });
             } catch(e) {
@@ -204,7 +201,7 @@ class Config {
                 this.default();
             }
         } else if(!boolCheck) {
-            callback(`INVALID_TYPE`);
+            return callback(`INVALID_TYPE`);
         }
     }
     /**
@@ -213,9 +210,8 @@ class Config {
      * @param {Function} callback: takes the argument (err).
      */
     static writeConfig(options, callback) {
-        fs.writeFile(configPath, options, function(err) {
-            if(err) callback(err);
-            return;
+        fs.writeFile(configPath, options, err => {
+            if(err) return callback(err);
         });
     }
     // sets config to default
@@ -247,19 +243,19 @@ class Config {
         // NOTE: config is written to the users home directory. EX: c:\users\<username>\appdata\local\twitch\config.json
         // TODO: set correct directory for writing files after test is done
         // NOTE: use createPath.js to handle this logic
-        fs.stat(`${process.cwd()}/data/`, function(err) {
+        fs.stat(`${process.cwd()}/data/`, err => {
             if(err) {
-                fs.mkdir(`${process.cwd()}/data/`, function(err) {
+                fs.mkdir(`${process.cwd()}/data/`, err => {
                     if(err) console.error(err);
                 });
             } else {
-                fs.writeFile(configPath, JSON.stringify(defaults, null, 4), function(err) {
+                fs.writeFile(configPath, JSON.stringify(defaults, null, 4), err => {
                     if(err) console.error(err);
                 });
             }
         });
 
-        fs.writeFile(configPath, JSON.stringify(defaults, null, 4), function(err) {
+        fs.writeFile(configPath, JSON.stringify(defaults, null, 4), err => {
             if(err) console.error(err);
         });
     }

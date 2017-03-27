@@ -18,7 +18,7 @@ class apiController {
     // get channel
     getChannel(channel) {
         let link = `https://twitch.tv/api/${channel}`;
-        request.get(link, function(err, data) {
+        request.get(link, (err, data) => {
             // for testing purposing
             if(err) throw err;
 

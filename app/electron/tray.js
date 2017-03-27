@@ -9,7 +9,7 @@ const {app, Menu, Tray} = require('electron');
 
 let tray = null;
 
-app.on('ready', function() {
+app.on('ready', () => {
     tray = new Tray ('/path/to/my/icon');
     const contextMenu = Menu.buildFromTemplate([
         {label: 'Featured', type: 'normal'},

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 function checkPath(dir, callback) {
-    fs.stat(dir, function(err) {
+    fs.stat(dir, err => {
         if(err) {
             callback(false);
             return;

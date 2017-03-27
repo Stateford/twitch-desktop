@@ -1,8 +1,8 @@
 // menu.js
 window.$ = window.jQuery = require('./lib/jquery/dist/jquery.min.js');
-$(document).ready(function() {
+$(document).ready(() => {
     // TILE
-    $('.tile').on('click', function() {
+    $('.tile').on('click', () => {
         if($('.default').hasClass("hidden")) {
             $('.default').removeClass("hidden");
         } else {
@@ -28,35 +28,35 @@ $(document).ready(function() {
         'options'
     ];
     // MENU FEATURED
-    $('#menu-featured').on('click', function() {
+    $('#menu-featured').on('click', () => {
         for(let button of menuButtons) {
             $(`#menu-${button}`).removeClass('menu-active');
         }
         $(this).addClass('menu-active');
     });
     // MENU CHANNELS
-    $('#menu-channels').on('click', function() {
+    $('#menu-channels').on('click', () => {
         for(let button of menuButtons) {
             $(`#menu-${button}`).removeClass('menu-active');
         }
         $(this).addClass('menu-active');
     });
     // MENU GAMES
-    $('#menu-games').on('click', function() {
+    $('#menu-games').on('click', () => {
         for(let button of menuButtons) {
             $(`#menu-${button}`).removeClass('menu-active');
         }
         $(this).addClass('menu-active');
     });
     // MENU DASHBOARD
-    $('#menu-dashboard').on('click', function() {
+    $('#menu-dashboard').on('click', () => {
         for(let button of menuButtons) {
             $(`#menu-${button}`).removeClass('menu-active');
         }
         $(this).addClass('menu-active');
     });
     // OPTIONS
-    $('#menu-options').on('click', function() {
+    $('#menu-options').on('click', () => {
         for(let button of menuButtons) {
             $(`#menu-${button}`).removeClass('menu-active');
         }
@@ -64,7 +64,7 @@ $(document).ready(function() {
     });
     // SEARCH
     let searchOpen = false;
-    $('#menu-search').on('click', function(event) {
+    $('#menu-search').on('click', event => {
         event.stopPropagation();
         if($('#search-box').hasClass('hidden')) {
             searchOpen = true;
@@ -75,13 +75,13 @@ $(document).ready(function() {
         }
     });
     // SEARCH
-    $("#search-box").on('click', function(event) {
+    $("#search-box").on('click', event => {
         event.stopPropagation();
     });
 
 
     // CLOSE MENUS
-    $(window).on('click', function() {
+    $(window).on('click', () => {
         if(searchOpen) {
             $('#search-box').addClass('hidden');
         }
@@ -91,35 +91,35 @@ $(document).ready(function() {
 
     // TILES
         // FEATURED
-    $('#tile-featured').on('click', function() {
+    $('#tile-featured').on('click', () => {
         for(let button of menuButtons) {
             $(`#menu-${button}`).removeClass('menu-active');
         }
         $("#menu-featured").addClass('menu-active');
     });
     // CHANNELS
-    $('#tile-channels').on('click', function() {
+    $('#tile-channels').on('click', () => {
         for(let button of menuButtons) {
             $(`#menu-${button}`).removeClass('menu-active');
         }
         $("#menu-channels").addClass('menu-active');
     });
     //GAMES
-    $('#tile-games').on('click', function() {
+    $('#tile-games').on('click', () => {
         for(let button of menuButtons) {
             $(`#menu-${button}`).removeClass('menu-active');
         }
         $("#menu-games").addClass('menu-active');
     });
     // DASHBOARD
-    $('#tile-dashboard').on('click', function() {
+    $('#tile-dashboard').on('click', () => {
         for(let button of menuButtons) {
             $(`#menu-${button}`).removeClass('menu-active');
         }
         $("#menu-dashboard").addClass('menu-active');
     });
     // OPTIONS
-    $('#tile-options').on('click', function() {
+    $('#tile-options').on('click', () => {
         for(let button of menuButtons) {
             $(`#menu-${button}`).removeClass('menu-active');
         }
@@ -135,14 +135,14 @@ $(document).ready(function() {
         }
     }
 
-    $('#menu-following').on('mouseover', function() {
+    $('#menu-following').on('mouseover', () => {
         mouseOver.following = true;
         setTimeout(function() {
             dispCS();
         }, 700);
     });
 
-    $('#menu-following').on('mouseleave', function() {
+    $('#menu-following').on('mouseleave', () => {
         mouseOver.following = false;
         $('#cs-following').addClass('hidden');
     });

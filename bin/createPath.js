@@ -25,15 +25,15 @@ class CreatePath {
                     test = path.join(tempPath, `${i}/`);
                 } else if(path.extname(i) !== '') {
                     // TODO: fix this logic
-                    fs.writeFile(tempPath, data, function(err) {
+                    fs.writeFile(tempPath, data, err => {
                         if(err) callback(err);
                     });
                 } else {
                     tempPath = path.join(tempPath, i);
                 }
-                fs.stat(tempPath, function(err) {
+                fs.stat(tempPath, err => {
                     if(err) {
-                        fs.mkdir(tempPath, function(err) {
+                        fs.mkdir(tempPath, err => {
                             if(err) callback(err);
                         });
                     }
@@ -48,7 +48,7 @@ class CreatePath {
 
 let foo = new CreatePath(`${__dirname}\\test\\test.js`);
 
-foo.chkpath(function(err, data) {
+foo.chkpath((err, data) => {
     if(err) throw err;
     console.log(data);
 });

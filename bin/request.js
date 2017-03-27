@@ -25,17 +25,17 @@ class Request {
     // TODO: add a way to include POST data;
     static http(options, callback) {
         let data = "";
-        let req = http.request(options, function(res) {
+        let req = http.request(options, res => {
             res.setEncoding('utf8');
 
-            res.on('data', function(chunk) {
+            res.on('data', chunk => {
                 data += chunk;
             });
-            res.on('end', function() {
+            res.on('end', () => {
                 callback(null, data);
             });
         });
-        req.on('error', function(err) {
+        req.on('error', err => {
             callback(err.message, null);
         });
         req.end();
@@ -49,18 +49,18 @@ class Request {
     // TODO : add a way to take POST params
     static https(options, callback) {
         let data = "";
-        let req = https.request(options, function(res) {
+        let req = https.request(options, res => {
             res.setEncoding('utf8');
 
-            res.on('data', function(chunk) {
+            res.on('data', chunk => {
                 data += chunk;
             });
 
-            res.on('end', function() {
+            res.on('end', () => {
                 callback(null, data);
             });
         });
-        req.on('error', function(err) {
+        req.on('error', err => {
             callback(err.message, null);
         });
 
@@ -82,13 +82,13 @@ class Request {
 
         switch(options.protocol) {
             case 'http:':
-                this.http(options, function(err, data) {
+                this.http(options, (err, data) => {
                     if(err) callback(err);
                     callback(null, data);
                 });
                 break;
             case 'https:':
-                this.https(options, function(err, data) {
+                this.https(options, (err, data) => {
                     if(err) callback(err);
                     callback(null, data);
                 });
@@ -114,15 +114,15 @@ class Request {
         // check for our protocol
         switch(options.protocol) {
             case 'http:':
-                this.http(options, function(err, data) {
+                this.http(options, (err, data) => {
                     if(err) callback(err, null);
-                    callback(null, data);
+                    return callback(null, data);
                 });
                 break;
             case 'https:':
-                this.https(options, function(err, data) {
+                this.https(options, (err, data) => {
                     if(err) callback(err, null);
-                    callback(null, data);
+                    return callback(null, data);
                 });
                 break;
             default:
@@ -130,15 +130,14 @@ class Request {
                  * TODO: set up a try/catch to request information without a protocol
                 */
                 try {
-                    this.http(options, function(err, data) {
+                    this.http(options, (err, data) => {
                         if(err) throw err;
-                        callback(null, data);
+                        return callback(null, data);
                     });
                     break;
                 }
                 catch(e) {
-                    callback(e, null);
-                    break;
+                    return callback(e, null);
                 }
         }
     }

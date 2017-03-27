@@ -18,7 +18,7 @@ const BrowserWindow = electron.BrowserWindow;   // Module to create native brows
 let mainWindow = null;
 
 // Quit when all windows are closed.
-app.on('window-all-closed', function() {
+app.on('window-all-closed', () => {
     // on OSX it is common for applications and their menu bar
     // to stay active until the user quits explicity with Cmd+Q
     if(process.platform != 'darwin') {
@@ -28,7 +28,7 @@ app.on('window-all-closed', function() {
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
-app.on('ready', function() {
+app.on('ready', () => {
     // Create the browser windows
 
     mainWindow = new BrowserWindow({width: 825, height: 558, minWidth: 825, minHeight: 558, frame: true, resizeable: true});
@@ -45,7 +45,7 @@ app.on('ready', function() {
     mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed
-    mainWindow.on('closed', function() {
+    mainWindow.on('closed', () => {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element

@@ -14,7 +14,7 @@ const request = require('../scripts/request');
  * @description : handles all api calls
 */
 
-app.get('/api/stream/:channel', function(req, res) {
+app.get('/api/stream/:channel', (req, res) => {
     let channel = req.params.channel;
     res.send(req.params.channel);
 });

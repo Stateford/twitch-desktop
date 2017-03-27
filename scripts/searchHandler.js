@@ -4,9 +4,9 @@
  */
 function search(input, callback) {
     if(typeof input === 'string') {
-        callback(null, `https://www.twitch.tv/api/kraken/streams/${input}`);
+        return callback(null, `https://www.twitch.tv/api/kraken/streams/${input}`);
     } else {
-        callback('INVALID_INPUT');
+        return callback('INVALID_INPUT');
     }
     return;
 }

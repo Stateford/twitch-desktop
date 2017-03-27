@@ -19,7 +19,7 @@ class Process {
     static startStream(stream) {
         let link = `${process.env.STREAM_API}/${stream}`;
         console.log(link);
-        Request.get(link, function(err, data) {
+        Request.get(link, (err, data) => {
             if(err) throw err;
             console.log(data);
         });
