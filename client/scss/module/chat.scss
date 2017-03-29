@@ -1,0 +1,13 @@
+// modules/chat.scss
+
+#chat-button {
+    position: absolute;
+    #chat-button-container {
+        #chat-toggle {
+            i {
+                font-size: 1em;
+                color: black;
+            }
+        }
+    }
+}
