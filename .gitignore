@@ -2,11 +2,12 @@
 .env
 /node_modules/
 /data/
-/client/lib/
+/src/client/lib/
 /test/
 /install/
+/examples/
 CHANGELOG.md
 .sass-cache/
 *.map
-client/res/placeholder/
+/src/client/res/placeholder/
 laptopSass.bat

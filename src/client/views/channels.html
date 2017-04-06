@@ -4,11 +4,12 @@
         <div class="channel-tile">
 
             <div class="channel-tile-info">
-                <img ng-src="{{streams.thumbnail}}" />
+                <img ng-src="{{streams[0].preview.small}}" />
                 <div class="channel-tile-stats">
-                    <p>{{streams.title}}</p>
-                    <p>{{streams.display_name}}</p>
-                    <p>{{streams.viewers}}</p>
+                    <p>{{streams[0].channel.status}}</p>
+                    <p>{{streams[0].channel.display_name}}</p>
+                    <p>{{streams[0].game}}</p>
+                    <p>{{streams[0].viewers}}</p>
                 </div>
             </div>
 

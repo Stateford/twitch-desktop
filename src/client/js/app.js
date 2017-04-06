@@ -6,33 +6,35 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
                $routeProvider
                 .when('/', {
                    controller: 'twitchCtrl',
-                   templateUrl: 'client/views/default.html'
+                   templateUrl: 'src/client/views/default.html'
                })
                .when('/featured', {
-                   templateUrl: 'client/views/featured.html'
+                   controller: 'featuredCtrl',
+                   templateUrl: 'src/client/views/featured.html'
                })
                .when('channel/:channel', {
                    controller: 'streamCtrl',
-                   templateUrl: 'client/views/stream.html'
+                   templateUrl: 'src/client/views/stream.html'
                })
                .when('/options', {
-                   templateUrl: 'client/views/options.html'
+                   templateUrl: 'src/client/views/options.html'
                })
                .when('/games', {
-                   templateUrl: 'client/views/games.html'
+                   controller: 'gamesCtrl',
+                   templateUrl: 'src/client/views/games.html'
                })
                .when('/games/:game', {
-                   templateUrl: 'client/views/streamsGame.html'
+                   templateUrl: 'src/client/views/streamsGame.html'
                })
                .when('/channels', {
                    controller: 'channelsCtrl',
-                   templateUrl: 'client/views/channels.html'
+                   templateUrl: 'src/client/views/channels.html'
                })
                .when('/following', {
-                   templateUrl: 'client/views/following.html'
+                   templateUrl: 'src/client/views/following.html'
                })
                .when('/dashboard', {
-                   templateUrl: 'client/views/dashboard.html'
+                   templateUrl: 'src/client/views/dashboard.html'
                })
                .otherwise({
                    redirectTo: "/"

@@ -18,11 +18,9 @@ const childProcess = require('child_process');
 class Process {
     static startStream(stream) {
         let link = `${process.env.STREAM_API}/${stream}`;
-        console.log(link);
-        Request.get(link, (err, data) => {
-            if(err) throw err;
-            console.log(data);
-        });
+        Request.get(link)
+            .then(console.log)
+            .catch(console.error);
         /*
          * NOTE: set logic to get twitch stream url here
         */

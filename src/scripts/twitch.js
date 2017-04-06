@@ -19,7 +19,12 @@ class Twitch {
      * @param {string} channel : appends channel to api url for request
      * @param {function} callback : takes paramers err, res to return if stream is live
     */
-    static isLive(channel, callback) {
+    static isLive(channel) {
+        return new Promise((resolve, reject) => {
+            request.get(`${process.env.STREAM_API}/${channel}`)
+                .then(resolve(true))
+                .catch(resolve(false));
+        });
         request.get(`${process.env.STREAM_API}\\${channel}`, (err, res) => {
             if(err) return callback(err);
             else return callback(null, res);

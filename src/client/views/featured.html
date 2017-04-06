@@ -1,0 +1,19 @@
+<div class="featured" ng-controller="featuredCtrl">
+    <div class="featured-wrap">
+        <!-- CHANNEL TILE -->
+        <div class="channel-tile">
+            <h1>FEATURED</h1>
+            <div class="channel-tile-info">
+                <img ng-src="{{streams[0].stream.preview.medium}}" />
+                <div class="channel-tile-stats">
+                    <p>{{streams[0].text}}</p>
+                    <p>{{streams[0].stream.channel.status}}</p>
+                    <p>{{streams[0].stream.channel.display_name}}</p>
+                    <p>{{streams[0].stream.game}}</p>
+                    <p>{{streams[0].stream.viewers}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

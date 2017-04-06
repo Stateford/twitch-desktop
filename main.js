@@ -33,7 +33,7 @@ app.on('ready', () => {
 
     mainWindow = new BrowserWindow({width: 825, height: 558, minWidth: 825, minHeight: 558, frame: true, resizeable: true});
 
-    mainWindow.loadURL(`file://${__dirname}/client/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/src/client/index.html`);
 
     /**
      * TODO: add ipc listeners to work with frontend
