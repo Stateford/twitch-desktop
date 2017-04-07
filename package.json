@@ -10,7 +10,8 @@
     "dotenv": "^4.0.0"
   },
   "devDependencies": {
-    "express": "^4.14.0"
+    "electron-connect": "^0.6.1",
+    "gulp": "^3.9.1"
   },
   "scripts": {
     "test": "electron main.js",

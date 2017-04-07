@@ -25,8 +25,8 @@ const configPath = `${process.cwd()}/data/config.json`;
 function saveLoc(callback) {
     let curOS = os.platform();
     let sys = {
-        win32: `${os.homedir()}\\appdata\\local\\twitch\\config.json`,
-        linux: `${os.homedir()}\\.local\\twitch\\config.json`
+        win32: `${os.homedir()}/appdata/local/twitch/config.json`,
+        linux: `${os.homedir()}/.local/twitch/config.json`
     };
     switch(curOS) {
         case "win32":
@@ -236,7 +236,7 @@ class Config {
                 "notifications": false,
                 "defaultWindow": "following"
             },
-            "vlcPath": "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe"
+            "vlcPath": "C:/Program Files/VideoLAN/VLC/vlc.exe"
         };
 
         // write to config
