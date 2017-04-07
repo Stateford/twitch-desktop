@@ -42,10 +42,11 @@ class VLC {
                 .then(link => {
                     // pass information to CMD.exe
                     childProcess.exec(`start "" "${config.vlcPath}" ${link}`, (err, stdout, stderr) => {
-                        if(err) throw err;
+                        if(err) reject(err);
+                        resolve(stdout, stderr);
                     })
-                    .catch(err => {throw err});
                 })
+                .catch(reject);
         });
     }
 }
