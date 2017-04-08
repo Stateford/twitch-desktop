@@ -38,6 +38,7 @@ class VLC {
     static start(user) {
         return new Promise((resolve, reject) => {
             // get our link to use with CMD.exe
+            user = user.toLowerCase();
             this.getStreamUrl(user)
                 .then(link => {
                     // pass information to CMD.exe
