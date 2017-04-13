@@ -1,4 +1,4 @@
-app.controller('streamCtrl', ($scope, $http, $location, $sce) => {
+app.controller('streamCtrl', function($scope, $http, $location, $sce) {
 
     let channel = $location.url();
     $scope.currentStream = [];

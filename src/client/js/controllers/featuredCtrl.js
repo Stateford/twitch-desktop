@@ -1,4 +1,4 @@
-app.controller('featuredCtrl', ($scope, $http, $location, $sce) => {
+app.controller('featuredCtrl', function($scope, $http, $location, $sce) {
     let channel = $location.url();
 
 

@@ -1,4 +1,4 @@
-app.controller('gamesCtrl', ($scope, $http, $route) => {
+app.controller('gamesCtrl', function($scope, $http, $route) {
     let channels = 'http://idietmoran.com/twitch/api/top/games';
 
     $scope.streams = {};

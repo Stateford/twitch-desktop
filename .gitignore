@@ -1,5 +1,6 @@
 .jshintrc
 .env
+.vscode/
 /node_modules/
 /data/
 /src/client/lib/

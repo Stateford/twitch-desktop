@@ -1,4 +1,4 @@
-app.controller('twitchCtrl', ($scope, $http, $route) => {
+app.controller('twitchCtrl', function($scope, $http, $route) {
 //    let serverTest = "http://localhost:30002/api/streams";
    let localTest = "../../data/streams.json";
 
