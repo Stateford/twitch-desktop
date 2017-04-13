@@ -12,7 +12,6 @@ app.controller('streamCtrl', function($scope, $http, $location, $sce) {
     $http.get(`http://idietmoran.com/twitch/api/users${channel}`)
         .success((data) => {
             $scope.audioStream = data.url;
-            console.log(data.url);
         })
         .error((data) => {
             console.error('got nothing');

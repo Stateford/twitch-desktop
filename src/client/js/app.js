@@ -5,7 +5,6 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
                $locationProvider.html5Mode({enabled: true, requireBase: false}).hashPrefix('*');
                $routeProvider
                 .when('/', {
-                   controller: 'twitchCtrl',
                    templateUrl: 'src/client/views/default.html'
                })
                .when('/featured', {

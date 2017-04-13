@@ -14,7 +14,6 @@ app.controller('featuredCtrl', function($scope, $http, $location, $sce) {
 
     $http.get(`http://idietmoran.com/twitch/api/featured`)
         .success((data) => {
-            console.log(data.featured);
             $scope.streams = data.featured;
         })
         .error((data) => {
