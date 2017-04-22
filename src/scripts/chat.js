@@ -4,45 +4,38 @@
  * @description : parses the config and returns the proper information
  */
 
-class Chat {
-    /**
-     * @description :
-     */
-     static inline(channel, callback) {
+const Promise = require("bluebird");
 
-         //TODO :
+ function Chat() {};
 
-     }
-    /**
-     * @description : returns the URL for the current channels popoutchat
-     */
-    static popout(channel) {
-        return new Promise((resolve, reject) => {
-            return resolve(`https://www.twitch.tv/${channel}/chat?popout=`);
-        });
-    }
-    /**
-     * @description : parses the config and returns the proper channel infomration
-     */
-    static run(channel) {
-        return new Promise((resolve, reject) => {
-            // get our connfig
-            let config = require('../data/config.json');
+ // Chat.inline = function(channel) {
+ //
+ // }
 
-            // check if popout chat is enabled
-            if(config.options.chat.enabled && config.options.chat.popoutChat) {
-                // retrieve url
-                this.popout(channel)
-                    .then(chatUrl => resolve(chatUrl))
-                    .catch(console.error);
-            } else if(config.options.chat.enabled && !config.options.chat.popoutChat) {
-                this.popout(channel)
-                    .then(chatUrl => resolve(chatUrl))
-                    .catch(console.error);
-            }
-        });
-    }
-
+ /**
+  * @description : returns the URL for the current channels popoutchat
+  */
+Chat.popout = function(channel) {
+    return new Promise((resolve, reject) => {
+        return resolve(`https://www.twitch.tv/${channel}/chat?popout=`);
+    });
 }
 
-Chat.run("arteezy").then(console.log);
+Chat.run = function(channel) {
+    // get our connfig
+    let config = require('../data/config.json');
+
+    // check if popout chat is enabled
+    if(config.options.chat.enabled && config.options.chat.popoutChat) {
+        // retrieve url
+        this.popout(channel)
+            .then(chatUrl => resolve(chatUrl))
+            .catch(console.error);
+    } else if(config.options.chat.enabled && !config.options.chat.popoutChat) {
+        this.popout(channel)
+            .then(chatUrl => resolve(chatUrl))
+            .catch(console.error);
+    }
+}
+
+module.exports = Chat;
