@@ -11,6 +11,7 @@ require('../app/error');
 const fs = require('fs');
 const os = require('os');
 const Promise = require("bluebird");
+const Stream = require("stream");
 
 // NOTE: Point to our config here so we don't have to set it in every line
 const configPath = `${process.cwd()}/data/config.json`;
@@ -39,28 +40,41 @@ function saveLoc(callback) {
 */
 // NOTE: CREATE READ / WRITE STREAM
 function Config() {
-    this.config = configPath;
+    this.config = options.configPath;
+    this._defaults = {
+        "options": {
+            "chat" : {
+                "enabled": true,
+                "popoutChat": false
+            },
+            "player" : {
+                "vlc": false,
+                "html5": false,
+                "twitchPlayer": true
+            },
+            "quality": "source",
+            "notifications": false,
+            "defaultWindow": "following"
+        },
+        "vlcPath": "C:/Program Files/VideoLAN/VLC/vlc.exe"
+    };
 }
 
 // set VLC options
 Config.setPlayer = function(options) {
         if(typeof options === "object") {
             // pull in our config
-            let config = require(configPath);
+            let config = fs.createReadStream(configPath);
             for(let i in options) {
                 switch(i) {
                    case "vlc":
                        return `${i} : ${options[i]}`;
-                       break;
                    case "html5":
                        return `${i} : ${options[i]}`;
-                       break;
                    case "twitchPlayer":
                        return `${i} : ${options[i]}`;
-                       break;
                    default:
                        return 'something went wrong'
-                       break;
                 }
             }
         } else {
@@ -86,10 +100,25 @@ Config.vlcPath = function(path) {
             }
             try {
                 // import our config
-                let config = require(configPath);
+                let rs = fs.createReadStream(configPath);
+                let data = "";
+                let config = {};
+                rs.on("data", chunk => {
+                    data += chunk;
+                });
+
+                if(typeof data === 'string') {
+                    config = JSON.parse(data);
+                }
+
                 // update our config
                 config.vlcPath = path;
                 // write to config
+                let ws = fs.createWriteStream(configPath);
+                ws.write(JSON.stringify(config, null, 4));
+                ws.end();
+                
+
                 fs.writeFile(configPath, JSON.stringify(config, null, 4), function(err) {
                     if(err) throw err;
                 });
@@ -224,23 +253,6 @@ Config.writeConfig = function(options) {
 */
 Config.default = function() {
     // set our defaults
-    let defaults = {
-        "options": {
-            "chat" : {
-                "enabled": true,
-                "popoutChat": false
-            },
-            "player" : {
-                "vlc": false,
-                "html5": false,
-                "twitchPlayer": true
-            },
-            "quality": "source",
-            "notifications": false,
-            "defaultWindow": "following"
-        },
-        "vlcPath": "C:/Program Files/VideoLAN/VLC/vlc.exe"
-    };
 
     // write to config
     // NOTE: config is written to the users home directory. EX: c:\users\<username>\appdata\local\twitch\config.json
@@ -252,13 +264,13 @@ Config.default = function() {
                 if(err) console.error(err);
             });
         } else {
-            fs.writeFile(configPath, JSON.stringify(defaults, null, 4), err => {
+            fs.writeFile(configPath, JSON.stringify(this._defaults, null, 4), err => {
                 if(err) console.error(err);
             });
         }
     });
 
-    fs.writeFile(configPath, JSON.stringify(defaults, null, 4), err => {
+    fs.writeFile(configPath, JSON.stringify(this._defaults, null, 4), err => {
         if(err) console.error(err);
     });
 }

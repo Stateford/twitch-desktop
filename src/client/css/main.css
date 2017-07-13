@@ -5,7 +5,7 @@ html, body, .wrapper {
   height: 100%; }
 
 body {
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 h1, h2, h3, h4, h5 {
   margin: 0;
@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5 {
   height: 100%; }
 
 .menu {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   background-color: #1E1E1E;
   z-index: 2;

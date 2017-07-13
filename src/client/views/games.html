@@ -1,5 +1,17 @@
-<div class="games">
-    <div class="games-wrapper">
-        <h1>GAMES</h1>
+<div class="games" ng-controller="channelsCtrl">
+    <div class="games-wrap">
+        <!-- CHANNEL TILE -->
+        <div class="channel-tile" ng-repeat="stream in streams">
+
+            <div class="channel-tile-info">
+                <img ng-src="{{stream.preview.medium}}" />
+                <div class="channel-tile-stats">
+                    <p>{{stream.channel.status}}</p>
+                    <p>{{stream.channel.display_name}}</p>
+                    <p>{{stream.game}}</p>
+                    <p>{{stream.viewers}}</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

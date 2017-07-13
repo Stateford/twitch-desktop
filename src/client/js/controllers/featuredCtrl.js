@@ -13,12 +13,12 @@ app.controller('featuredCtrl', function($scope, $http, $location, $sce) {
     // };
 
     $http.get(`http://idietmoran.com/twitch/api/featured`)
-        .success((data) => {
-            $scope.streams = data.featured;
-        })
-        .error((data) => {
+        .then(data => {
+            $scope.streams = data.data.featured;
+        }, err => {
             console.log('got nothing');
         });
+
 
 
 });

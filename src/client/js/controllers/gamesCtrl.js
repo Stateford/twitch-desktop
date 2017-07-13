@@ -8,11 +8,13 @@ app.controller('gamesCtrl', function($scope, $http, $route) {
     // };
 
     $http.get(channels)
-        .success((data) => {
-            $scope.streams = data.streams;
-        })
-        .error((data) => {
-            console.log('got nothing');
+        .then(data => {
+            // NOTE: dev purposes
+            // test purposes
+            console.log(data);
+            $scope.streams = data.data.streams;
+        }, err => {
+            console.log(err);
         });
 
 });

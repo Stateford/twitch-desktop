@@ -7,6 +7,10 @@
 const fs = require('fs');
 
 class Hotkey {
+    constructor() {
+        
+    }
+
     static default() {
         let defaults = {
             'alt-left' : 'exit'
